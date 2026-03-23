@@ -1,0 +1,25 @@
+{
+  "hero": [
+    { "num": "150", "suffix": "+", "label": "완료 프로젝트" },
+    { "num": "7",   "suffix": "일", "label": "평균 납기" },
+    { "num": "98",  "suffix": "%", "label": "고객 만족도" }
+  ],
+  "cards": [
+    { "num": "150", "suffix": "+",  "suffixStyle": "font-size:0.5em", "label": "완료 프로젝트", "desc": "AI Agent · 자동화 · 웹사이트 포함" },
+    { "num": "70",  "suffix": "%",  "suffixStyle": "font-size:0.5em", "label": "업무 시간 절감", "desc": "AI Agent 도입 클라이언트 평균" },
+    { "num": "98",  "suffix": "%",  "suffixStyle": "font-size:0.5em", "label": "고객 만족도",   "desc": "실제 운영 클라이언트 기준" },
+    { "num": "24",  "suffix": "시간","suffixStyle": "font-size:0.4em;color:var(--black)", "label": "무중단 자동화", "desc": "AI가 쉬지 않고 일합니다" }
+  ],
+  "bars": [
+    { "label": "반복 업무 자동화율",       "value": 91 },
+    { "label": "고객 응대 응답 속도 개선", "value": 88 },
+    { "label": "문의·전환율 향상",         "value": 76 },
+    { "label": "운영 비용 절감",           "value": 65 }
+  ],
+  "kpi": [
+    { "val": "98", "suffix": "%",  "txt": "고객 만족도" },
+    { "val": "70", "suffix": "%",  "txt": "업무 시간 절감" },
+    { "val": "24", "suffix": "H",  "suffixStyle": "font-size:0.45em", "txt": "AI 무중단 운영" },
+    { "val": "7",  "suffix": "일", "suffixStyle": "font-size:0.5em", "txt": "평균 납기" }
+  ]
+}
