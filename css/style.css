@@ -235,6 +235,11 @@ nav {
 
 .hero-title .accent  { color: var(--orange); }
 .hero-title .accent2 { color: var(--orange2); }
+.hero-title .accent-playfair {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+}
 
 .hero-sub {
   font-size: 18px;
