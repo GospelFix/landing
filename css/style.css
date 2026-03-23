@@ -1214,6 +1214,18 @@ section { padding: 88px 60px; }
   display: flex;
   flex-direction: column;
   gap: 7px;
+  text-decoration: none;
+}
+
+.contact-info-card--link {
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.contact-info-card--link:hover {
+  border-color: var(--orange);
+  box-shadow: 0 4px 20px rgba(255,85,0,0.1);
+  transform: translateY(-2px);
 }
 
 .contact-info-label {
