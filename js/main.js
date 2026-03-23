@@ -26,6 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ──────────────────────────────────────────
      네비게이션 — 현재 섹션 하이라이트
      ────────────────────────────────────────── */
+  /* ──────────────────────────────────────────
+     네비게이션 — 스크롤 시 블러 배경 적용
+     ────────────────────────────────────────── */
+  const nav = document.querySelector('nav');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  }, { passive: true });
+
   const sections  = document.querySelectorAll('section[id]');
   const navLinks  = document.querySelectorAll('.nav-links a');
   const mobileLinks = document.querySelectorAll('.nav-mobile-menu a:not(.mobile-cta)');
@@ -68,18 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  /* ──────────────────────────────────────────
-     네비게이션 — 스크롤 시 배경 강화
-     ────────────────────────────────────────── */
-  const nav = document.querySelector('nav');
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-      nav.style.background = 'rgba(7, 7, 13, 0.98)';
-    } else {
-      nav.style.background = 'rgba(7, 7, 13, 0.92)';
-    }
-  }, { passive: true });
 
 
   /* ──────────────────────────────────────────
