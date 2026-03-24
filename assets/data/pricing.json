@@ -10,7 +10,7 @@
       { "included": true,  "text": "AI 챗봇 + 웹사이트 통합 구축" },
       { "included": true,  "text": "기본 채널 1개 연동" },
       { "included": true,  "text": "모바일 최적화" },
-{ "included": true,  "text": "30일 운영 지원" },
+      { "included": true,  "text": "30일 운영 지원" },
       { "included": false, "text": "멀티 솔루션 통합" },
       { "included": false, "text": "업무 자동화 연동" },
       { "included": false, "text": "전담 컨설팅" }

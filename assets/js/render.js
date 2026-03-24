@@ -128,7 +128,7 @@ function renderPortfolio(portfolio) {
         <div class="portfolio-tag">${p.tag}</div>
         <div class="portfolio-name">${p.name}</div>
         <div class="portfolio-desc">${p.desc}</div>
-        <a href="${p.link}" class="portfolio-link">사이트 보기 →</a>
+        ${p.link && p.link !== "#" ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="portfolio-link">사이트 보기 →</a>` : ""}
       </div>
     </div>
   `,
