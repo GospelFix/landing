@@ -421,6 +421,18 @@ section { padding: 88px 60px; }
   font-weight: 300;
 }
 
+.portfolio-notice {
+  display: inline-block;
+  margin-bottom: 32px;
+  padding: 8px 18px;
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #e65100;
+  font-weight: 500;
+}
+
 
 /* ────────────────────────────────────────────
    WHY / STATS
@@ -1257,7 +1269,7 @@ section { padding: 88px 60px; }
    FOOTER
    ──────────────────────────────────────────── */
 footer {
-  padding: 44px 20px 36px;
+  padding: 44px 60px 36px;
   border-top: 1px solid var(--border);
   background: var(--bg);
 }
@@ -1419,6 +1431,7 @@ footer {
   .ba-grid { grid-template-columns: 1fr; gap: 12px; }
   .ba-sep { display: none; }
 
+  footer { padding: 44px 20px 36px; }
   .footer-top { flex-direction: column; }
   .form-row-2 { grid-template-columns: 1fr; }
 
