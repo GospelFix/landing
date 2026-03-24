@@ -163,7 +163,7 @@ function renderPricing(plans) {
   el.innerHTML = plans
     .map((p) => {
       const strikeHtml = p.originalPrice
-        ? `<span style="font-size:0.5em;text-decoration:line-through;opacity:0.5;margin-right:6px;font-weight:400;">${p.originalPrice}만원</span>`
+        ? `<span class="pricing-original">${p.originalPrice}만원</span>`
         : "";
       const priceHtml = p.priceCustom
         ? `<div class="pricing-price" style="font-size:clamp(28px,3vw,40px)">${p.price}</div>`
