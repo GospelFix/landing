@@ -5,7 +5,7 @@
    ============================================= */
 
 async function loadJSON(file) {
-  const res = await fetch(`data/${file}`);
+  const res = await fetch(`assets/data/${file}`);
   if (!res.ok) throw new Error(`${file} 로드 실패: ${res.status}`);
   return res.json();
 }
