@@ -105,6 +105,8 @@ document.addEventListener("siteDataReady", () => {
       const isOpen = hamburger.classList.toggle("open");
       mobileMenu.classList.toggle("open", isOpen);
       document.body.style.overflow = isOpen ? "hidden" : "";
+      // 접근성 — 메뉴 열림/닫힘 상태를 스크린리더에 전달
+      hamburger.setAttribute("aria-expanded", isOpen);
     });
   }
 
