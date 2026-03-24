@@ -162,9 +162,12 @@ function renderPricing(plans) {
   if (!el) return;
   el.innerHTML = plans
     .map((p) => {
+      const strikeHtml = p.originalPrice
+        ? `<span style="font-size:0.5em;text-decoration:line-through;opacity:0.5;margin-right:6px;font-weight:400;">${p.originalPrice}만원</span>`
+        : "";
       const priceHtml = p.priceCustom
         ? `<div class="pricing-price" style="font-size:clamp(28px,3vw,40px)">${p.price}</div>`
-        : `<div class="pricing-price">${p.price}<span style="font-size:0.4em;color:${p.featured ? "rgba(255,255,255,0.7)" : "var(--gray2)"}">  ${p.priceUnit}</span></div>`;
+        : `<div class="pricing-price">${strikeHtml}${p.price}<span style="font-size:0.4em;color:${p.featured ? "rgba(255,255,255,0.7)" : "var(--gray2)"}">  ${p.priceUnit}</span></div>`;
 
       const featuresHtml = p.features
         .map(

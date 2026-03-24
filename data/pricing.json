@@ -1,7 +1,8 @@
 [
   {
     "tier": "Starter",
-    "price": "150",
+    "price": "99",
+    "originalPrice": "150",
     "priceUnit": "만원~",
     "desc": "단일 솔루션 · 빠른 시작",
     "featured": false,
@@ -18,7 +19,8 @@
   },
   {
     "tier": "Growth",
-    "price": "499",
+    "price": "299",
+    "originalPrice": "499",
     "priceUnit": "만원~",
     "desc": "멀티 솔루션 통합 · 맞춤 설계",
     "featured": true,
