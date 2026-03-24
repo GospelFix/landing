@@ -28,7 +28,7 @@
     "features": [
       { "included": true,  "text": "AI Agent + 웹사이트 통합 구축" },
       { "included": true,  "text": "멀티 솔루션 통합" },
-      { "included": true,  "text": "업무 자동화 워크플로우 설계 (n8n 포함)" },
+      { "included": true,  "text": "업무 자동화 워크플로우 설계 (n8n or Make)" },
       { "included": true,  "text": "GA4 + 전환 추적 설정" },
       { "included": true,  "text": "기존 시스템 API 연동" },
       { "included": true,  "text": "3개월 운영 지원 포함" }
