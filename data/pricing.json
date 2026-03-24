@@ -27,13 +27,11 @@
     "badge": "MOST POPULAR",
     "features": [
       { "included": true,  "text": "AI Agent + 웹사이트 통합 구축" },
-      { "included": true,  "text": "AI 챗봇 멀티채널 배포" },
-      { "included": true,  "text": "업무 자동화 워크플로우 설계" },
+      { "included": true,  "text": "멀티 솔루션 통합" },
+      { "included": true,  "text": "업무 자동화 워크플로우 설계 (n8n 포함)" },
       { "included": true,  "text": "GA4 + 전환 추적 설정" },
       { "included": true,  "text": "기존 시스템 API 연동" },
-      { "included": true,  "text": "3개월 운영 지원 포함" },
-      { "included": true,  "text": "월간 성과 리포트" },
-      { "included": false, "text": "전사 디지털 전환 컨설팅" }
+      { "included": true,  "text": "3개월 운영 지원 포함" }
     ],
     "cta": { "label": "지금 시작하기", "class": "btn-filled" }
   },
@@ -44,13 +42,16 @@
     "desc": "전사 디지털 전환 · 장기 파트너십",
     "featured": false,
     "features": [
-      { "included": true, "text": "디지털 전환 로드맵 설계" },
       { "included": true, "text": "AI Agent 풀 커스텀 구축" },
-      { "included": true, "text": "전 채널 통합 자동화" },
+      { "included": true, "text": "업무 자동화 워크플로우 설계 (n8n 포함)" },
+      { "included": true, "text": "GA4 + 전환 추적 설정" },
+      { "included": true, "text": "기존 시스템 API 연동" },
       { "included": true, "text": "데이터 분석 대시보드 구축" },
-      { "included": true, "text": "전담 컨설턴트 배정" },
-      { "included": true, "text": "무제한 수정 & 고도화" },
-      { "included": true, "text": "6개월 이상 운영 파트너십" },
+      { "included": true, "text": "맞춤형 관리자 대시보드 구축" },
+      { "included": true, "text": "멀티 솔루션 통합" },
+      { "included": true, "text": "보안 & 컴플라이언스 지원" },
+      { "included": true, "text": "서비스 고도화" },
+      { "included": true, "text": "1년 이상 운영 파트너십" },
       { "included": true, "text": "팀 교육 & 온보딩 포함" }
     ],
     "cta": { "label": "맞춤 견적 문의", "class": "btn-outline" }
