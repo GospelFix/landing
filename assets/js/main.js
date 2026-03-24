@@ -172,9 +172,8 @@ document.addEventListener("siteDataReady", () => {
     .forEach((grid) => statObserver.observe(grid));
 
   /* ──────────────────────────────────────────
-     폼 제출 처리 (토스트 알림)
+     토스트 알림
      ────────────────────────────────────────── */
-  const contactForm = document.querySelector("#contact-form");
   const toast = document.querySelector(".toast");
 
   function showToast(message) {
@@ -182,35 +181,6 @@ document.addEventListener("siteDataReady", () => {
     toast.textContent = message;
     toast.classList.add("show");
     setTimeout(() => toast.classList.remove("show"), 3500);
-  }
-
-  if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const name = contactForm.querySelector('[name="name"]').value.trim();
-      const contact = contactForm
-        .querySelector('[name="contact"]')
-        .value.trim();
-      const industry = contactForm.querySelector('[name="industry"]').value;
-
-      if (!name) {
-        showToast("이름을 입력해주세요.");
-        return;
-      }
-      if (!contact) {
-        showToast("연락처를 입력해주세요.");
-        return;
-      }
-      if (!industry) {
-        showToast("업종을 선택해주세요.");
-        return;
-      }
-
-      // 실제 서비스 시 API 연동
-      showToast("✓ 문의가 접수되었습니다. 빠른 시일 내 연락드리겠습니다!");
-      contactForm.reset();
-    });
   }
 
   /* ──────────────────────────────────────────
