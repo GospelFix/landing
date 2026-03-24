@@ -1,0 +1,105 @@
+/* =============================================
+   GOSPELFIX — fonts.css
+   로컬 폰트 @font-face 정의
+   ============================================= */
+
+/* ── Pretendard ──────────────────────────────── */
+@font-face {
+  font-family: 'Pretendard Variable';
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Variable'),
+       url('../fonts/Pretendard-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Thin'),
+       url('../fonts/Pretendard-Thin.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard ExtraLight'),
+       url('../fonts/Pretendard-ExtraLight.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Light'),
+       url('../fonts/Pretendard-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Regular'),
+       url('../fonts/Pretendard-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Medium'),
+       url('../fonts/Pretendard-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard SemiBold'),
+       url('../fonts/Pretendard-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Bold'),
+       url('../fonts/Pretendard-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard ExtraBold'),
+       url('../fonts/Pretendard-ExtraBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Pretendard';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: local('Pretendard Black'),
+       url('../fonts/Pretendard-Black.woff2') format('woff2');
+}
+
+/* ── Playfair Display ────────────────────────── */
+@font-face {
+  font-family: 'Playfair Display';
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+  src: local('Playfair Display Bold Italic'),
+       url('../fonts/PlayfairDisplay-BoldItalic.woff') format('woff');
+}
