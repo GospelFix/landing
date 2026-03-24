@@ -265,16 +265,24 @@ nav.scrolled {
   flex-wrap: wrap;
 }
 
+/* ── 버튼 공통 베이스 ─────────────────────────── */
+/* 모든 .btn-* 클래스에서 반복되는 공통 속성을 추출 */
+.btn-base {
+  display: inline-block;
+  border-radius: 100px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+/* ── 버튼 개별 스타일 ─────────────────────────── */
 .btn-primary {
   background: var(--black);
   color: var(--white);
   padding: 15px 36px;
-  border-radius: 100px;
   font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
   transition: background 0.18s, transform 0.18s;
-  display: inline-block;
 }
 
 .btn-primary:hover { background: var(--orange); transform: translateY(-2px); }
@@ -283,12 +291,9 @@ nav.scrolled {
   border: 1.5px solid var(--black);
   color: var(--black);
   padding: 14px 32px;
-  border-radius: 100px;
   font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
+  font-weight: 500; /* 예외: secondary만 700이 아닌 500 사용 */
   transition: all 0.18s;
-  display: inline-block;
 }
 
 .btn-secondary:hover { background: var(--black); color: var(--white); }
@@ -945,36 +950,26 @@ section { padding: 88px 60px; }
 .pricing-features li.dim::before { content: '–'; color: var(--gray3); }
 
 .btn-outline {
-  display: block;
+  display: block; /* 예외: 가격 카드 내 전체 너비 버튼이므로 block 사용 */
   text-align: center;
   padding: 13px;
-  border-radius: 100px;
   font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
-  transition: all 0.18s;
   border: 1.5px solid var(--border);
   color: var(--black);
   background: transparent;
-  cursor: pointer;
   width: 100%;
 }
 
 .btn-outline:hover { background: var(--black); color: var(--white); border-color: var(--black); }
 
 .btn-filled {
-  display: block;
+  display: block; /* 예외: 가격 카드 내 전체 너비 버튼이므로 block 사용 */
   text-align: center;
   padding: 13px;
-  border-radius: 100px;
   font-size: 14px;
-  font-weight: 700;
-  text-decoration: none;
   background: var(--orange);
   color: var(--white);
   border: 1.5px solid var(--orange);
-  transition: all 0.18s;
-  cursor: pointer;
   width: 100%;
 }
 
@@ -1026,11 +1021,7 @@ section { padding: 88px 60px; }
   background: var(--orange);
   color: var(--white);
   font-size: 15px;
-  font-weight: 700;
   padding: 16px 40px;
-  border-radius: 100px;
-  text-decoration: none;
-  display: inline-block;
   transition: background 0.18s, transform 0.18s;
 }
 

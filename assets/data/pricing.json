@@ -15,7 +15,7 @@
       { "included": false, "text": "업무 자동화 연동" },
       { "included": false, "text": "전담 컨설팅" }
     ],
-    "cta": { "label": "문의하기", "class": "btn-outline" }
+    "cta": { "label": "문의하기", "class": "btn-base btn-outline" }
   },
   {
     "tier": "Growth",
@@ -33,7 +33,7 @@
       { "included": true,  "text": "기존 시스템 API 연동" },
       { "included": true,  "text": "3개월 운영 지원 포함" }
     ],
-    "cta": { "label": "지금 시작하기", "class": "btn-filled" }
+    "cta": { "label": "지금 시작하기", "class": "btn-base btn-filled" }
   },
   {
     "tier": "Enterprise",
@@ -54,6 +54,6 @@
       { "included": true, "text": "1년 이상 운영 파트너십" },
       { "included": true, "text": "팀 교육 & 온보딩 포함" }
     ],
-    "cta": { "label": "맞춤 견적 문의", "class": "btn-outline" }
+    "cta": { "label": "맞춤 견적 문의", "class": "btn-base btn-outline" }
   }
 ]
