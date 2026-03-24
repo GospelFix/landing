@@ -59,7 +59,7 @@ document.addEventListener("siteDataReady", () => {
 
     [...navLinks, ...mobileLinks].forEach((link) => {
       const href = link.getAttribute("href");
-      link.style.color = href === "#" + current ? "var(--orange2)" : "";
+      link.classList.toggle("active", href === "#" + current);
     });
   }
 

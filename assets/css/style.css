@@ -93,6 +93,11 @@ nav {
 
 .nav-links a:hover { color: var(--black); }
 
+.nav-links a.active,
+.nav-mobile-menu a.active {
+  color: var(--orange2);
+}
+
 .nav-cta {
   background: var(--black);
   color: var(--white);
