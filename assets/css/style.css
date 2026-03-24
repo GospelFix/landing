@@ -428,11 +428,11 @@ section { padding: 88px 60px; }
   display: inline-block;
   margin-bottom: 32px;
   padding: 8px 18px;
-  background: #fff3e0;
-  border: 1px solid #ffcc80;
+  background: rgba(255, 85, 0, 0.06);
+  border: 1px solid rgba(255, 85, 0, 0.2);
   border-radius: 20px;
   font-size: 14px;
-  color: #e65100;
+  color: var(--orange);
   font-weight: 500;
 }
 
