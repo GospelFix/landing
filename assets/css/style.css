@@ -774,8 +774,41 @@ section { padding: 88px 60px; }
   font-size: 13px;
   color: var(--gray2);
   line-height: 1.65;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
   font-weight: 300;
+}
+
+.portfolio-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.portfolio-tech,
+.portfolio-client {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-tech {
+  background: rgba(255, 85, 0, 0.1);
+  color: var(--orange);
+}
+
+.portfolio-client {
+  background: rgba(0, 0, 0, 0.06);
+  color: var(--gray2);
+}
+
+.portfolio-period {
+  font-size: 11px;
+  color: var(--gray2);
+  opacity: 0.7;
+  margin-bottom: 12px;
 }
 
 .portfolio-link {
