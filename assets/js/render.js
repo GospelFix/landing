@@ -120,9 +120,11 @@ function renderPortfolio(portfolio) {
     .map(
       (p) => `
     <div class="portfolio-card">
-      <div class="portfolio-num">${p.num}</div>
-      <div class="portfolio-img-wrap">
-        <div class="portfolio-img-placeholder">${p.emoji}</div>
+<div class="portfolio-img-wrap">
+        ${p.img
+          ? `<img class="portfolio-img" src="${p.img}" alt="${p.name}" loading="lazy">`
+          : `<div class="portfolio-img-placeholder">${p.emoji}</div>`
+        }
       </div>
       <div class="portfolio-info">
         <div class="portfolio-tag">${p.tag}</div>

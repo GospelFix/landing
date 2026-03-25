@@ -8,6 +8,7 @@
     "tech": "HTML, CSS, JS",
     "period": "2025.01 ~ 2025.02",
     "company": "㈜비스톤스",
+    "img": "assets/imgs/portfolio/samsungPetCare.png",
     "link": "#"
   },
   {
@@ -19,6 +20,7 @@
     "tech": "HTML, CSS, JS",
     "period": "2025.01 ~ 2025.02",
     "company": "㈜비스톤스",
+    "img": "assets/imgs/portfolio/samsungAi.png",
     "link": "https://www.samsung.com/sec/ai-subs/event/all-benefits/"
   },
   {
