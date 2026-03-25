@@ -13,7 +13,8 @@
       { "included": true,  "text": "30일 운영 지원" },
       { "included": false, "text": "멀티 솔루션 통합" },
       { "included": false, "text": "업무 자동화 연동" },
-      { "included": false, "text": "전담 컨설팅" }
+      { "included": false, "text": "전담 컨설팅" },
+      { "included": false, "text": "AI 랜딩페이지 제작 교육" }
     ],
     "cta": { "label": "문의하기", "class": "btn-base btn-outline" }
   },
@@ -31,7 +32,9 @@
       { "included": true,  "text": "업무 자동화 워크플로우 설계 (n8n or Make)" },
       { "included": true,  "text": "GA4 + 전환 추적 설정" },
       { "included": true,  "text": "기존 시스템 API 연동" },
-      { "included": true,  "text": "3개월 운영 지원 포함" }
+      { "included": true,  "text": "3개월 운영 지원 포함" },
+      { "included": true,  "text": "팀 교육 & 온보딩 포함" },
+      { "included": false, "text": "AI 랜딩페이지 제작 교육 무료 제공" }
     ],
     "cta": { "label": "지금 시작하기", "class": "btn-base btn-filled" }
   },
@@ -52,7 +55,8 @@
       { "included": true, "text": "보안 & 컴플라이언스 지원" },
       { "included": true, "text": "서비스 고도화" },
       { "included": true, "text": "1년 이상 운영 파트너십" },
-      { "included": true, "text": "팀 교육 & 온보딩 포함" }
+      { "included": true, "text": "팀 교육 & 온보딩 포함" },
+      { "included": false, "text": "AI 랜딩페이지 제작 교육 무료 제공" }
     ],
     "cta": { "label": "맞춤 견적 문의", "class": "btn-base btn-outline" }
   }
