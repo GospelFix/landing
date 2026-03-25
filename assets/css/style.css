@@ -786,7 +786,7 @@ section { padding: 88px 60px; }
 }
 
 .portfolio-tech,
-.portfolio-client {
+.portfolio-company {
   font-size: 11px;
   font-weight: 600;
   padding: 2px 8px;
@@ -799,7 +799,7 @@ section { padding: 88px 60px; }
   color: var(--orange);
 }
 
-.portfolio-client {
+.portfolio-company {
   background: rgba(0, 0, 0, 0.06);
   color: var(--gray2);
 }

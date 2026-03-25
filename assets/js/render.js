@@ -130,7 +130,7 @@ function renderPortfolio(portfolio) {
         <div class="portfolio-desc">${p.desc}</div>
         <div class="portfolio-meta">
           ${p.tech ? `<span class="portfolio-tech">${p.tech}</span>` : ""}
-          ${p.client ? `<span class="portfolio-client">${p.client}</span>` : ""}
+          ${p.company ? `<span class="portfolio-company">${p.company}</span>` : ""}
         </div>
         ${p.period ? `<div class="portfolio-period">${p.period}</div>` : ""}
         ${p.link && p.link !== "#" ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="portfolio-link">사이트 보기 →</a>` : ""}
