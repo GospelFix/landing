@@ -918,8 +918,18 @@ section { padding: 88px 60px; }
     gap: 12px;
   }
   .pmore-row {
-    grid-template-columns: 1fr auto;
-    gap: 12px;
+    grid-template-columns: 1fr auto auto;
+    gap: 10px;
+  }
+  .pmore-name {
+    font-size: 0.875rem;
+  }
+  .pmore-company {
+    font-size: 0.75rem;
+    text-align: right;
+  }
+  .pmore-type {
+    font-size: 0.75rem;
   }
 }
 
