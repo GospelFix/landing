@@ -131,10 +131,9 @@ function renderPortfolio(portfolio) {
         <div class="portfolio-name">${p.name}</div>
         <div class="portfolio-desc">${p.desc}</div>
         <div class="portfolio-meta">
-          ${p.tech ? `<span class="portfolio-tech">${p.tech}</span>` : ""}
+          ${p.type ? `<span class="portfolio-type">${p.type}</span>` : ""}
           ${p.company ? `<span class="portfolio-company">${p.company}</span>` : ""}
         </div>
-        ${p.period ? `<div class="portfolio-period">${p.period}</div>` : ""}
         ${p.link && p.link !== "#" ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="portfolio-link">사이트 보기 →</a>` : ""}
       </div>
     </div>
@@ -199,15 +198,51 @@ function renderPricing(plans) {
     .join("");
 }
 
+/* ── 포트폴리오 텍스트 목록 ─────────────────── */
+function renderPortfolioMore(items) {
+  const el = document.getElementById("portfolio-more");
+  if (!el) return;
+
+  // 연도별 그룹핑
+  const grouped = items.reduce((acc, item) => {
+    (acc[item.year] = acc[item.year] || []).push(item);
+    return acc;
+  }, {});
+
+  const years = Object.keys(grouped).sort((a, b) => b - a);
+
+  el.innerHTML = `
+    <div class="pmore-heading">more.more.more.</div>
+    <div class="pmore-line"></div>
+    <div class="pmore-table">
+      ${years.map(year => `
+        <div class="pmore-group">
+          <div class="pmore-year">${year}</div>
+          <div class="pmore-items">
+            ${grouped[year].map(item => `
+              <div class="pmore-row">
+                <span class="pmore-name">${item.name}</span>
+                ${item.company ? `<span class="pmore-company">${item.company}</span>` : ""}
+                <span class="pmore-type">${item.type}</span>
+              </div>
+            `).join("")}
+          </div>
+        </div>
+      `).join("")}
+    </div>
+  `;
+}
+
 /* ── 전체 실행 ──────────────────────────────── */
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const [ticker, stats, services, portfolio, steps, pricing] =
+    const [ticker, stats, services, portfolio, portfolioMore, steps, pricing] =
       await Promise.all([
         loadJSON("ticker.json"),
         loadJSON("stats.json"),
         loadJSON("services.json"),
         loadJSON("portfolio.json"),
+        loadJSON("portfolio-more.json"),
         loadJSON("process.json"),
         loadJSON("pricing.json"),
       ]);
@@ -218,6 +253,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderMetrics(stats);
     renderServices(services);
     renderPortfolio(portfolio);
+    renderPortfolioMore(portfolioMore);
     renderProcess(steps);
     renderPricing(pricing);
 

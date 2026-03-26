@@ -785,6 +785,7 @@ section { padding: 88px 60px; }
   margin-bottom: 6px;
 }
 
+.portfolio-type,
 .portfolio-tech,
 .portfolio-company {
   font-size: 11px;
@@ -792,6 +793,11 @@ section { padding: 88px 60px; }
   padding: 2px 8px;
   border-radius: 20px;
   letter-spacing: 0.02em;
+}
+
+.portfolio-type {
+  background: rgba(255, 85, 0, 0.1);
+  color: var(--orange);
 }
 
 .portfolio-tech {
@@ -824,6 +830,98 @@ section { padding: 88px 60px; }
 
 .portfolio-link:hover { color: var(--orange); }
 
+/* ── 포트폴리오 텍스트 목록 (more.more.more.) ── */
+.portfolio-more {
+  margin-top: 80px;
+}
+
+.pmore-heading {
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  margin-bottom: 40px;
+}
+
+.pmore-line {
+  width: 1px;
+  height: 80px;
+  background: var(--orange);
+  margin: 0 auto 60px;
+}
+
+.pmore-table {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pmore-group {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0 40px;
+  border-top: 1px solid var(--border);
+  padding: 32px 0;
+}
+
+.pmore-group:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.pmore-year {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--black);
+  padding-top: 2px;
+}
+
+.pmore-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pmore-row {
+  display: grid;
+  grid-template-columns: 1fr 160px 60px;
+  gap: 24px;
+  align-items: center;
+}
+
+.pmore-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--black);
+}
+
+.pmore-company {
+  font-size: 0.875rem;
+  color: #888;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.pmore-type {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--black);
+  white-space: nowrap;
+  min-width: 32px;
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .pmore-group {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .pmore-row {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+  }
+}
 
 
 /* ────────────────────────────────────────────
