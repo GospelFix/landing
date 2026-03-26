@@ -40,12 +40,16 @@ body {
 }
 
 
+#main-content { padding-top: 64px; }
+
 /* ────────────────────────────────────────────
    NAV
    ──────────────────────────────────────────── */
 nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   background: transparent;
   border-bottom: 1px solid var(--border);
@@ -75,7 +79,7 @@ nav {
   object-fit: contain;
 }
 
-.nav-logo span { color: var(--orange); }
+.nav-logo span { color: var(--orange); margin-left: -5px; }
 
 .nav-links {
   display: flex;
@@ -1447,7 +1451,7 @@ footer {
   object-fit: contain;
 }
 
-.footer-logo span { color: var(--orange); }
+.footer-logo span { color: var(--orange); margin-left: -5px; }
 
 .footer-tagline {
   font-size: 13px;
