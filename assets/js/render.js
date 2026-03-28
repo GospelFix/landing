@@ -221,7 +221,10 @@ function renderPortfolioMore(items) {
           <div class="pmore-items">
             ${grouped[year].map(item => `
               <div class="pmore-row">
-                <span class="pmore-name">${item.name}</span>
+                <span class="pmore-name">
+                  ${item.name}
+                  ${item.desc ? `<span class="pmore-desc">${item.desc}</span>` : ""}
+                </span>
                 ${item.company ? `<span class="pmore-company">${item.company}</span>` : ""}
                 <span class="pmore-type">${item.type}</span>
               </div>
