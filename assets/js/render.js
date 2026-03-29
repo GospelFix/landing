@@ -209,7 +209,12 @@ function renderPortfolioMore(items) {
     return acc;
   }, {});
 
-  const years = Object.keys(grouped).sort((a, b) => b - a);
+  const years = Object.keys(grouped).sort((a, b) => {
+    const aStart = parseInt(a), bStart = parseInt(b);
+    if (aStart !== bStart) return bStart - aStart;
+    const aEnd = parseInt(a.split("-")[1] || a), bEnd = parseInt(b.split("-")[1] || b);
+    return bEnd - aEnd;
+  });
 
   el.innerHTML = `
     <div class="pmore-heading">more.more.more.</div>
