@@ -962,6 +962,88 @@ section { padding: 88px 60px; }
 
 
 /* ────────────────────────────────────────────
+   REVIEWS
+   ──────────────────────────────────────────── */
+#reviews {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.review-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.review-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.review-tag {
+  display: inline-block;
+  background: var(--orange-bg);
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+  letter-spacing: 0.02em;
+  align-self: flex-start;
+}
+
+.review-quote {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--gray1);
+  flex: 1;
+}
+
+.review-metric {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange);
+  background: var(--orange-bg);
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+}
+
+.review-author {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+.review-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.review-role {
+  font-size: 13px;
+  color: var(--gray2);
+}
+
+@media (max-width: 900px) {
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ────────────────────────────────────────────
    PROCESS
    ──────────────────────────────────────────── */
 #process {
@@ -1608,6 +1690,7 @@ footer {
   .stats-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
   .kpi-grid { grid-template-columns: 1fr; }
   .footer-links { flex-direction: column; gap: 24px; }
   .hero-stats { flex-direction: column; }

@@ -198,6 +198,27 @@ function renderPricing(plans) {
     .join("");
 }
 
+/* ── 고객 후기 ──────────────────────────────── */
+function renderReviews(reviews) {
+  const el = document.getElementById("reviews-grid");
+  if (!el) return;
+  el.innerHTML = reviews
+    .map(
+      (r) => `
+    <div class="review-card">
+      <div class="review-tag">${r.tag}</div>
+      <div class="review-quote">"${r.quote}"</div>
+      <div class="review-metric">${r.metric}</div>
+      <div class="review-author">
+        <div class="review-name">${r.name}</div>
+        <div class="review-role">${r.role}</div>
+      </div>
+    </div>
+  `,
+    )
+    .join("");
+}
+
 /* ── 포트폴리오 텍스트 목록 ─────────────────── */
 function renderPortfolioMore(items) {
   const el = document.getElementById("portfolio-more");
@@ -244,14 +265,14 @@ function renderPortfolioMore(items) {
 /* ── 전체 실행 ──────────────────────────────── */
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const [ticker, stats, services, portfolio, portfolioMore, steps, pricing] =
+    const [ticker, stats, services, portfolio, portfolioMore, reviews, pricing] =
       await Promise.all([
         loadJSON("ticker.json"),
         loadJSON("stats.json"),
         loadJSON("services.json"),
         loadJSON("portfolio.json"),
         loadJSON("portfolio-more.json"),
-        loadJSON("process.json"),
+        loadJSON("reviews.json"),
         loadJSON("pricing.json"),
       ]);
 
@@ -262,7 +283,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderServices(services);
     renderPortfolio(portfolio);
     renderPortfolioMore(portfolioMore);
-    renderProcess(steps);
+    renderReviews(reviews);
     renderPricing(pricing);
 
     // 렌더링 완료 후 main.js 초기화 트리거
