@@ -7,7 +7,7 @@
     "desc": "단일 솔루션 · 빠른 시작",
     "featured": false,
     "features": [
-      { "included": true,  "text": "AI 챗봇 + 웹사이트 통합 구축" },
+      { "included": true,  "text": "AI 챗봇 (채널톡) + 웹사이트 통합 구축" },
       { "included": true,  "text": "기본 채널 1개 연동" },
       { "included": true,  "text": "모바일 최적화" },
       { "included": true,  "text": "30일 운영 지원" },
