@@ -43,6 +43,21 @@ assets/data/*.json  →  assets/js/render.js (fetch + DOM 렌더링)  →  siteD
 배경: `--bg: #F7F5F0` (크림)
 폰트: 한글 `Pretendard Variable`, 강조 이탤릭 `Playfair Display`
 
+## 에이전트 활용 원칙
+
+작업 크기와 관계없이 **항상** 해당 에이전트를 먼저 호출한 뒤 작업을 진행한다.
+단순한 한 줄 수정이라도 예외 없이 에이전트를 먼저 호출한다.
+
+| 작업 유형 | 사용 에이전트 |
+|-----------|--------------|
+| CSS 수정 (크기 무관) | `css-responsive-expert` |
+| HTML 구조 수정 (크기 무관) | `html-template-expert` |
+| JS 컴포넌트 / API 연동 | `js-component-architect` |
+| 기능 기획 / PRD 작성 | `product-planner` |
+| 새 기능 구현 전 영향 범위 파악 | `senior-planner` |
+| 코드 작업 후 품질 검토 | `static-site-reviewer` |
+| 커밋 & 푸시 | `commit-push-agent` |
+
 ### 애니메이션 구조 (main.js)
 - `.fade-up` 클래스 요소: IntersectionObserver로 `.visible` 클래스 추가
 - `.bar-fill`: `.fade-up` 부모가 교차 시 `.animated` 클래스 추가 → CSS transition으로 바 채움
