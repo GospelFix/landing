@@ -2,6 +2,8 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+---
+
 ## 개발 환경
 
 빌드 도구 없는 순수 정적 사이트입니다. VS Code Live Server로 로컬 실행합니다.
@@ -9,6 +11,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **로컬 실행**: VS Code Live Server 확장 사용 (포트 5502)
 - **배포**: `main` 브랜치 push 시 GitHub Pages 자동 배포 (`.github/workflows/static.yml`)
 - `file://` 프로토콜로 직접 열면 `fetch()` CORS 오류 발생 — 반드시 로컬 서버 필요
+
+---
 
 ## 아키텍처
 
@@ -22,12 +26,16 @@ assets/data/*.json  →  assets/js/render.js (fetch + DOM 렌더링)  →  siteD
                                                           assets/js/main.js (애니메이션 & 인터랙션 초기화)
 ```
 
+---
+
 ### 스크립트 로딩 순서 (중요)
 
 `index.html` 하단에서 `render.js`가 `main.js`보다 먼저 로드됩니다.
 
 - `render.js`: `DOMContentLoaded` → JSON fetch → 렌더링 → `siteDataReady` 커스텀 이벤트 발생
 - `main.js`: `siteDataReady` 이벤트 수신 후 초기화 (동적으로 생성된 카드 등에 이벤트 바인딩 가능)
+
+---
 
 ### 데이터 파일 → 담당 섹션
 
@@ -40,6 +48,8 @@ assets/data/*.json  →  assets/js/render.js (fetch + DOM 렌더링)  →  siteD
 | `assets/data/process.json`   | 제작 과정 단계                                                |
 | `assets/data/pricing.json`   | 가격 플랜 (`featured`, `badge`, `priceCustom` 플래그 포함)    |
 
+---
+
 ### CSS 디자인 토큰 (style.css `:root`)
 
 포인트 컬러: `--orange: #FF5500`, `--orange2: #FF6B1A`
@@ -48,20 +58,37 @@ assets/data/*.json  →  assets/js/render.js (fetch + DOM 렌더링)  →  siteD
 
 커스텀 개발 및 검증 스킬은 `@.claude/skills/`에 정의되어 있습니다.
 
-## 에이전트 활용 원칙 (`.claude/agents/`)
+---
+
+## 에이전트 & 스킬
+
+### 에이전트 (`@.claude/agents/`)
 
 작업 크기와 관계없이 **항상** 해당 에이전트를 먼저 호출한 뒤 작업을 진행한다.
 단순한 한 줄 수정이라도 예외 없이 에이전트를 먼저 호출한다.
 
-| 작업 유형                      | 사용 에이전트            |
-| ------------------------------ | ------------------------ |
-| CSS 수정 (크기 무관)           | `css-responsive-expert`  |
-| HTML 구조 수정 (크기 무관)     | `html-template-expert`   |
-| JS 컴포넌트 / API 연동         | `js-component-architect` |
-| 기능 기획 / PRD 작성           | `product-planner`        |
-| 새 기능 구현 전 영향 범위 파악 | `senior-planner`         |
-| 코드 작업 후 품질 검토         | `static-site-reviewer`   |
-| 커밋 & 푸시                    | `commit-push-agent`      |
+| 에이전트                  | 사용 시점                                 |
+| ------------------------- | ----------------------------------------- |
+| `html-template-architect` | HTML 구조 생성/리뷰, 접근성 개선          |
+| `css-responsive-expert`   | CSS 작성/리뷰, 디자인 토큰 시스템         |
+| `js-api-component-expert` | JS 기능 구현, API 연동                    |
+| `static-landing-reviewer` | 코드 작성 후 품질 게이트 검토 (proactive) |
+| `project-architect`       | 전체 구조 분석, 기능 추가 계획 수립       |
+
+---
+
+### 스킬 (`@.claude/skills/` 명령어)
+
+| 명령어              | 기능                                               |
+| ------------------- | -------------------------------------------------- |
+| `/section [섹션명]` | 새 섹션 HTML + CSS 세트 생성                       |
+| `/design-extract`   | 디자인 이미지에서 CSS 변수 추출                    |
+| `/commit`           | 변경사항 분석 후 커밋 메시지 자동 생성             |
+| `/review`           | 현재 파일 전체 코드 리뷰 (품질 게이트 판정)        |
+| `/deploy-check`     | 배포 전 최종 점검 — HTML/CSS/JS/접근성 체크리스트  |
+| `/roadmap`          | ROADMAP.md 체크박스를 현재 코드 상태에 맞게 동기화 |
+
+---
 
 ### 애니메이션 구조 (main.js)
 
