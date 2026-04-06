@@ -969,11 +969,36 @@ section { padding: 88px 60px; }
   border-top: 1px solid var(--border);
 }
 
+.reviews-swiper-wrap {
+  margin-top: 48px;
+}
+
+/* PC: swiper 비활성 — grid로 표시 */
 .reviews-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 48px;
+}
+
+/* PC에서 swiper-slide는 단순 컨테이너로 동작 */
+@media (min-width: 769px) {
+  .reviews-swiper {
+    overflow: visible;
+  }
+  .reviews-swiper .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    transform: none !important;
+    width: auto !important;
+  }
+  .reviews-swiper .swiper-slide {
+    width: auto !important;
+    margin: 0 !important;
+  }
+  .reviews-pagination {
+    display: none;
+  }
 }
 
 .review-card {
@@ -1039,8 +1064,51 @@ section { padding: 88px 60px; }
   color: var(--gray2);
 }
 
-@media (max-width: 900px) {
-  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) and (min-width: 769px) {
+  .reviews-swiper .swiper-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 모바일: Swiper 슬라이더로 전환 */
+@media (max-width: 768px) {
+  .reviews-swiper-wrap {
+    overflow: hidden;
+  }
+  .reviews-swiper .swiper-wrapper {
+    display: flex;
+    width: auto;
+    transform: translateX(0);
+    gap: 0;
+  }
+  .reviews-swiper .swiper-slide {
+    flex-shrink: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .reviews-swiper {
+    padding-bottom: 52px !important;
+  }
+  .reviews-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    bottom: 0 !important;
+  }
+  .reviews-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    opacity: 1;
+    cursor: pointer;
+    transition: background 0.2s, width 0.2s;
+  }
+  .reviews-pagination .swiper-pagination-bullet-active {
+    background: var(--orange);
+    width: 24px;
+    border-radius: 4px;
+  }
 }
 
 /* ────────────────────────────────────────────
@@ -1690,7 +1758,7 @@ footer {
   .stats-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
   .portfolio-grid { grid-template-columns: 1fr; }
-  .reviews-grid { grid-template-columns: 1fr; }
+  /* reviews: 모바일에서 Swiper로 대체 */
   .kpi-grid { grid-template-columns: 1fr; }
   .footer-links { flex-direction: column; gap: 24px; }
   .hero-stats { flex-direction: column; }

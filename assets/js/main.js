@@ -221,4 +221,34 @@ document.addEventListener("siteDataReady", () => {
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
+
+  /* ──────────────────────────────────────────
+     고객 후기 — 모바일 Swiper 초기화
+     ────────────────────────────────────────── */
+  let reviewsSwiper = null;
+
+  function initReviewsSwiper() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile && !reviewsSwiper) {
+      reviewsSwiper = new Swiper(".reviews-swiper", {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: true,
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".reviews-pagination",
+          clickable: true,
+        },
+      });
+    } else if (!isMobile && reviewsSwiper) {
+      reviewsSwiper.destroy(true, true);
+      reviewsSwiper = null;
+    }
+  }
+
+  initReviewsSwiper();
+  window.addEventListener("resize", initReviewsSwiper, { passive: true });
 });

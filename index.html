@@ -65,6 +65,9 @@
 
     <!-- 스타일시트 -->
     <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Swiper.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   </head>
   <body>
     <!-- ═══════════════════════════════════════════
@@ -311,7 +314,13 @@
         <div class="section-label fade-up">Reviews</div>
         <div class="section-title fade-up">실제 <span class="accent">고객</span>의 이야기</div>
         <p class="section-desc fade-up">AI 솔루션 도입 후 달라진 비즈니스를 직접 들어보세요.</p>
-        <div class="reviews-grid fade-up" id="reviews-grid"></div>
+        <!-- PC: grid / 모바일: swiper -->
+        <div class="reviews-swiper-wrap fade-up">
+          <div class="swiper reviews-swiper">
+            <div class="reviews-grid swiper-wrapper" id="reviews-grid"></div>
+            <div class="swiper-pagination reviews-pagination"></div>
+          </div>
+        </div>
       </section>
 
 
@@ -449,6 +458,9 @@
 
     <!-- 토스트 알림 -->
     <div class="toast"></div>
+
+    <!-- Swiper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- 스크립트 -->
     <script src="assets/js/render.js"></script>

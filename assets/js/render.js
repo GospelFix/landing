@@ -205,13 +205,15 @@ function renderReviews(reviews) {
   el.innerHTML = reviews
     .map(
       (r) => `
-    <div class="review-card">
-      <div class="review-tag">${r.tag}</div>
-      <div class="review-quote">"${r.quote}"</div>
-      <div class="review-metric">${r.metric}</div>
-      <div class="review-author">
-        <div class="review-name">${r.name}</div>
-        <div class="review-role">${r.role}</div>
+    <div class="swiper-slide">
+      <div class="review-card">
+        <div class="review-tag">${r.tag}</div>
+        <div class="review-quote">"${r.quote}"</div>
+        <div class="review-metric">${r.metric}</div>
+        <div class="review-author">
+          <div class="review-name">${r.name}</div>
+          <div class="review-role">${r.role}</div>
+        </div>
       </div>
     </div>
   `,
