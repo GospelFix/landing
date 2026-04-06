@@ -198,6 +198,26 @@ function renderPricing(plans) {
     .join("");
 }
 
+/* ── 제작 과정 ──────────────────────────────── */
+function renderProcess(steps) {
+  const el = document.getElementById("process-steps");
+  if (!el) return;
+  el.innerHTML = steps
+    .map(
+      (s) => `
+    <div class="ptl-item">
+      <div class="ptl-circle"><span>${s.step}</span></div>
+      <div class="ptl-info">
+        <div class="ptl-timing">${s.timing}</div>
+        <div class="ptl-title">${s.title}</div>
+        <p class="ptl-desc">${s.desc}</p>
+      </div>
+    </div>
+  `,
+    )
+    .join("");
+}
+
 /* ── 고객 후기 ──────────────────────────────── */
 function renderReviews(reviews) {
   const el = document.getElementById("reviews-grid");
@@ -267,13 +287,14 @@ function renderPortfolioMore(items) {
 /* ── 전체 실행 ──────────────────────────────── */
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const [ticker, stats, services, portfolio, portfolioMore, reviews, pricing] =
+    const [ticker, stats, services, portfolio, portfolioMore, process, reviews, pricing] =
       await Promise.all([
         loadJSON("ticker.json"),
         loadJSON("stats.json"),
         loadJSON("services.json"),
         loadJSON("portfolio.json"),
         loadJSON("portfolio-more.json"),
+        loadJSON("process.json"),
         loadJSON("reviews.json"),
         loadJSON("pricing.json"),
       ]);
@@ -285,6 +306,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     renderServices(services);
     renderPortfolio(portfolio);
     renderPortfolioMore(portfolioMore);
+    renderProcess(process);
     renderReviews(reviews);
     renderPricing(pricing);
 

@@ -291,6 +291,16 @@ nav.scrolled {
 
 .btn-primary:hover { background: var(--orange); transform: translateY(-2px); }
 
+.btn-kakao {
+  background: #FEE500;
+  color: #000;
+  padding: 15px 36px;
+  font-size: 15px;
+  transition: background 0.18s, transform 0.18s;
+}
+
+.btn-kakao:hover { background: #f0d800; transform: translateY(-2px); }
+
 .btn-secondary {
   border: 1.5px solid var(--black);
   color: var(--black);
@@ -1685,6 +1695,246 @@ footer {
 
 
 /* ────────────────────────────────────────────
+   PROCESS — 제작 과정 (다크 가로 타임라인)
+   ──────────────────────────────────────────── */
+#process {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+
+.process-big-title {
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.process-big-title .accent { color: var(--orange); }
+
+.process-sub {
+  font-size: 15px;
+  color: var(--gray2);
+  margin-bottom: 72px;
+}
+
+/* 타임라인 */
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 원들을 잇는 가로선 (회색 베이스) */
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: calc(12.5%);
+  right: calc(12.5%);
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+/* 이동하는 주황 오브젝트 */
+.process-line-dot {
+  position: absolute;
+  top: 34px;
+  left: calc(12.5%);
+  width: 20px;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--orange);
+  box-shadow: 0 0 8px rgba(255, 85, 0, 0.5);
+  z-index: 2;
+  animation: dotTravel 2.8s ease-in-out infinite;
+}
+
+@keyframes dotTravel {
+  0%   { left: calc(12.5%);          opacity: 0; }
+  6%   { opacity: 1; }
+  88%  { opacity: 1; }
+  96%  { left: calc(87.5% - 20px);   opacity: 0; }
+  100% { left: calc(87.5% - 20px);   opacity: 0; }
+}
+
+.ptl-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 12px;
+}
+
+.ptl-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  margin-bottom: 28px;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.ptl-circle span {
+  font-family: var(--font-en);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: -0.02em;
+}
+
+.ptl-item:hover .ptl-circle {
+  background: var(--orange);
+  box-shadow: 0 4px 20px rgba(255, 85, 0, 0.25);
+}
+
+.ptl-item:hover .ptl-circle span { color: #fff; }
+
+.ptl-info { text-align: center; }
+
+.ptl-timing {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.ptl-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.ptl-desc {
+  font-size: 13px;
+  color: var(--gray2);
+  line-height: 1.75;
+}
+
+.process-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+/* ────────────────────────────────────────────
+   POSITIONING — 경쟁 포지셔닝
+   ──────────────────────────────────────────── */
+#positioning {
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+.pos-table {
+  margin-top: 48px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.pos-row {
+  display: grid;
+  grid-template-columns: 160px 1fr 1.2fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.pos-row:last-child { border-bottom: none; }
+
+.pos-cell {
+  padding: 18px 24px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid var(--border);
+}
+
+.pos-cell:last-child { border-right: none; }
+
+.pos-header .pos-cell {
+  font-weight: 700;
+  font-size: 12px;
+  color: var(--gray2);
+  background: var(--bg);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 14px 24px;
+}
+
+.pos-label-col {
+  font-weight: 600;
+  color: var(--gray1);
+  font-size: 13px;
+  background: var(--bg);
+}
+
+.pos-hl { background: var(--orange-bg); }
+
+.pos-header .pos-hl {
+  background: var(--orange);
+  color: var(--white) !important;
+  font-weight: 800 !important;
+  font-size: 14px !important;
+  letter-spacing: 0 !important;
+}
+
+.pos-good { color: var(--orange); font-weight: 700; }
+.pos-bad  { color: var(--gray2); }
+.pos-mid  { color: var(--gray1); }
+
+/* ────────────────────────────────────────────
+   FLOATING BUTTONS
+   ──────────────────────────────────────────── */
+.float-btns {
+  position: fixed;
+  right: 24px;
+  bottom: 36px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.float-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 20px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.float-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+}
+
+.float-btn-kakao { background: #FEE500; color: #000; }
+
+.float-btn-insta {
+  background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  color: #fff;
+}
+
+/* ────────────────────────────────────────────
    TOAST
    ──────────────────────────────────────────── */
 .toast {
@@ -1723,6 +1973,28 @@ footer {
 
   section { padding: 72px 24px; }
   .hero { padding: 72px 24px 56px; }
+
+  /* Process 모바일: 세로 타임라인으로 전환 */
+  .process-timeline {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px 0;
+  }
+  .process-timeline::before {
+    display: none;
+  }
+  .process-line-dot { display: none; }
+  .ptl-circle { width: 56px; height: 56px; }
+  .ptl-circle span { font-size: 16px; }
+  .ptl-title { font-size: 16px; }
+
+  /* Positioning 모바일: 레이블 컬럼 숨기고 3열 */
+  .pos-row { grid-template-columns: 1fr 1.2fr 1fr; }
+  .pos-label-col { display: none; }
+  .pos-cell { padding: 14px 16px; font-size: 13px; }
+
+  /* Float 버튼 모바일: 텍스트 숨기고 원형 */
+  .float-btn span { display: none; }
+  .float-btn { padding: 14px; border-radius: 50%; width: 52px; height: 52px; justify-content: center; }
 
   .hero-stats {
     flex-wrap: wrap;
@@ -1763,4 +2035,8 @@ footer {
   .footer-links { flex-direction: column; gap: 24px; }
   .hero-stats { flex-direction: column; }
   .hero-stat-item { flex: 1 1 100%; text-align: center; }
+
+  /* Positioning 최소화 */
+  .pos-row { grid-template-columns: 1fr 1.2fr 1fr; }
+  .pos-cell { padding: 12px 10px; font-size: 12px; }
 }

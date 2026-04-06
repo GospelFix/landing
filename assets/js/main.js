@@ -223,6 +223,16 @@ document.addEventListener("siteDataReady", () => {
   }
 
   /* ──────────────────────────────────────────
+     제작 과정 타임라인 — 이동 오브젝트 주입
+     ────────────────────────────────────────── */
+  const processTimeline = document.querySelector(".process-timeline");
+  if (processTimeline) {
+    const dot = document.createElement("div");
+    dot.className = "process-line-dot";
+    processTimeline.appendChild(dot);
+  }
+
+  /* ──────────────────────────────────────────
      고객 후기 — 모바일 Swiper 초기화
      ────────────────────────────────────────── */
   let reviewsSwiper = null;
