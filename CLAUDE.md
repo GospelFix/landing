@@ -69,15 +69,29 @@ assets/data/*.json  →  assets/js/render.js (fetch + DOM 렌더링)  →  siteD
 
 **단순 수정이라도 해당 에이전트를 먼저 호출한 뒤 작업한다.** 에이전트 파일 위치: `@.claude/agents/<이름>.md`
 
-| 에이전트                 | 사용 시점                                 |
-| ------------------------ | ----------------------------------------- |
-| `html-template-expert`   | HTML 구조 생성/리뷰, 접근성 개선          |
-| `css-responsive-expert`  | CSS 작성/리뷰, 디자인 토큰 시스템         |
-| `js-component-architect` | JS 기능 구현, API 연동                    |
-| `static-site-reviewer`   | 코드 작성 후 품질 게이트 검토 (proactive) |
-| `senior-planner`         | 전체 구조 분석, 기능 추가 계획 수립       |
-| `product-planner`        | 제품 기획, 사용자 플로우 및 로드맵 수립   |
-| `commit-push-agent`      | Git 커밋 메시지 자동 생성 & push          |
+| 에이전트                 | 사용 시점                                                                    |
+| ------------------------ | ---------------------------------------------------------------------------- |
+| `landing-orchestrator`   | **HTML+CSS+JS 복합 작업** — 어떤 에이전트를 어떤 순서로 호출할지 계획 수립  |
+| `html-template-expert`   | HTML 구조 생성/리뷰, 접근성 개선                                             |
+| `css-responsive-expert`  | CSS 작성/리뷰, 디자인 토큰 시스템                                            |
+| `js-component-architect` | JS 기능 구현, API 연동                                                       |
+| `static-site-reviewer`   | 코드 작성 후 품질 게이트 검토 (proactive, 항상 마지막에 실행)                |
+| `senior-planner`         | 전체 구조 분석, 기능 추가 계획 수립                                          |
+| `product-planner`        | 제품 기획, 사용자 플로우 및 로드맵 수립                                      |
+| `commit-push-agent`      | Git 커밋 메시지 자동 생성 & push                                             |
+
+#### 오케스트레이터 실행 흐름
+
+```
+사용자 요청 (복합 작업)
+  → landing-orchestrator (태스크 분석 + 실행 계획서 생성)
+      ↓ 계획서
+  → senior-planner (필요시)
+  → html-template-expert
+  → css-responsive-expert
+  → js-component-architect
+  → static-site-reviewer (항상 마지막)
+```
 
 ---
 

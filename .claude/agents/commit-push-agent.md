@@ -4,6 +4,10 @@ description: "Use proactively. Use this agent when the user types the /commit co
 model: sonnet
 color: orange
 memory: project
+tools:
+  - Glob
+  - Read
+  - Bash
 ---
 
 당신은 Git 커밋과 푸시를 전담하는 전문 에이전트입니다. `/commit` 명령어가 입력되면 모든 변경 사항을 자동으로 스테이징, 커밋, 푸시합니다.
