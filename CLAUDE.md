@@ -39,16 +39,16 @@ assets/data/*.json  →  assets/js/render.js (fetch + DOM 렌더링)  →  siteD
 
 ### 데이터 파일 → 담당 섹션
 
-| 파일                              | 섹션                                                                    |
-| --------------------------------- | ----------------------------------------------------------------------- |
-| `assets/data/ticker.json`         | 티커 (문자열 배열, render.js에서 2배 복제해 무한 스크롤 구현)           |
-| `assets/data/stats.json`          | Why 섹션 — `hero`, `cards`, `bars`, `kpi` 4개 키                        |
-| `assets/data/services.json`       | 서비스 카드 (6개)                                                       |
-| `assets/data/reviews.json`        | 고객 후기 (6개) — `quote`, `name`, `role`, `metric`, `tag` 키           |
-| `assets/data/portfolio.json`      | 포트폴리오 카드 (이미지 포함)                                           |
+| 파일                              | 섹션                                                                          |
+| --------------------------------- | ----------------------------------------------------------------------------- |
+| `assets/data/ticker.json`         | 티커 (문자열 배열, render.js에서 2배 복제해 무한 스크롤 구현)                 |
+| `assets/data/stats.json`          | Why 섹션 — `hero`, `cards`, `bars`, `kpi` 4개 키                              |
+| `assets/data/services.json`       | 서비스 카드 (6개)                                                             |
+| `assets/data/reviews.json`        | 고객 후기 (6개) — `quote`, `name`, `role`, `metric`, `tag` 키                 |
+| `assets/data/portfolio.json`      | 포트폴리오 카드 (이미지 포함)                                                 |
 | `assets/data/portfolio-more.json` | 포트폴리오 텍스트 목록 (연도별 그룹핑) — `year`, `name`, `company`, `type` 키 |
-| `assets/data/process.json`        | 제작 과정 단계 (4단계)                                                  |
-| `assets/data/pricing.json`        | 가격 플랜 (`featured`, `badge`, `priceCustom` 플래그 포함)              |
+| `assets/data/process.json`        | 제작 과정 단계 (4단계)                                                        |
+| `assets/data/pricing.json`        | 가격 플랜 (`featured`, `badge`, `priceCustom` 플래그 포함)                    |
 
 ---
 
@@ -65,30 +65,30 @@ assets/data/*.json  →  assets/js/render.js (fetch + DOM 렌더링)  →  siteD
 
 ## 에이전트 & 스킬
 
-### 에이전트 (`.claude/agents/`)
+### 에이전트
 
-**단순 수정이라도 해당 에이전트를 먼저 호출한 뒤 작업한다.** 에이전트 파일 위치: `.claude/agents/<이름>.md`
+**단순 수정이라도 해당 에이전트를 먼저 호출한 뒤 작업한다.** 에이전트 파일 위치: `@.claude/agents/<이름>.md`
 
-| 에이전트                 | 사용 시점                                  |
-| ------------------------ | ------------------------------------------ |
-| `html-template-expert`   | HTML 구조 생성/리뷰, 접근성 개선           |
-| `css-responsive-expert`  | CSS 작성/리뷰, 디자인 토큰 시스템          |
-| `js-component-architect` | JS 기능 구현, API 연동                     |
-| `static-site-reviewer`   | 코드 작성 후 품질 게이트 검토 (proactive)  |
-| `senior-planner`         | 전체 구조 분석, 기능 추가 계획 수립        |
-| `product-planner`        | 제품 기획, 사용자 플로우 및 로드맵 수립    |
-| `commit-push-agent`      | Git 커밋 메시지 자동 생성 & push           |
+| 에이전트                 | 사용 시점                                 |
+| ------------------------ | ----------------------------------------- |
+| `html-template-expert`   | HTML 구조 생성/리뷰, 접근성 개선          |
+| `css-responsive-expert`  | CSS 작성/리뷰, 디자인 토큰 시스템         |
+| `js-component-architect` | JS 기능 구현, API 연동                    |
+| `static-site-reviewer`   | 코드 작성 후 품질 게이트 검토 (proactive) |
+| `senior-planner`         | 전체 구조 분석, 기능 추가 계획 수립       |
+| `product-planner`        | 제품 기획, 사용자 플로우 및 로드맵 수립   |
+| `commit-push-agent`      | Git 커밋 메시지 자동 생성 & push          |
 
 ---
 
-### 스킬 (`.claude/skills/` 명령어)
+### 스킬 (`@.claude/skills/` 명령어)
 
-| 명령어            | 기능                                              |
-| ----------------- | ------------------------------------------------- |
-| `/commit`         | 변경사항 분석 후 한국어 커밋 메시지 자동 생성     |
-| `/review`         | 현재 파일 전체 코드 리뷰 (품질 게이트 판정)       |
-| `/deploy-check`   | 배포 전 최종 점검 — HTML/CSS/JS/접근성 체크리스트 |
-| `/add-portfolio`  | 포트폴리오 항목 추가                              |
+| 명령어           | 기능                                              |
+| ---------------- | ------------------------------------------------- |
+| `/commit`        | 변경사항 분석 후 한국어 커밋 메시지 자동 생성     |
+| `/review`        | 현재 파일 전체 코드 리뷰 (품질 게이트 판정)       |
+| `/deploy-check`  | 배포 전 최종 점검 — HTML/CSS/JS/접근성 체크리스트 |
+| `/add-portfolio` | 포트폴리오 항목 추가                              |
 
 ---
 
