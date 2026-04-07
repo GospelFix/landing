@@ -873,6 +873,14 @@ section { padding: 88px 60px; }
   margin-bottom: 40px;
 }
 
+.pmore-intro {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--gray2);
+  margin-bottom: 40px;
+  margin-top: -24px;
+}
+
 .pmore-line {
   width: 1px;
   height: 80px;
@@ -913,7 +921,7 @@ section { padding: 88px 60px; }
 
 .pmore-row {
   display: grid;
-  grid-template-columns: 1fr 160px 60px;
+  grid-template-columns: 1fr auto;
   gap: 24px;
   align-items: center;
 }
@@ -925,6 +933,22 @@ section { padding: 88px 60px; }
   display: flex;
   flex-direction: column;
   gap: 2px;
+}
+
+.pmore-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pmore-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--gray2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  white-space: nowrap;
 }
 
 .pmore-desc {

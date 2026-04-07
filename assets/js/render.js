@@ -261,6 +261,7 @@ function renderPortfolioMore(items) {
 
   el.innerHTML = `
     <div class="pmore-heading">more.more.more.</div>
+    <div class="pmore-intro">에이전시 재직 시절, 팀의 일원으로 기여한 작업 이력입니다.</div>
     <div class="pmore-line"></div>
     <div class="pmore-table">
       ${years.map(year => `
@@ -270,7 +271,10 @@ function renderPortfolioMore(items) {
             ${grouped[year].map(item => `
               <div class="pmore-row">
                 <span class="pmore-name">
-                  ${item.name}
+                  <span class="pmore-name-row">
+                    ${item.name}
+                    ${item.tag ? `<span class="pmore-tag">${item.tag}</span>` : ""}
+                  </span>
                   ${item.desc ? `<span class="pmore-desc">${item.desc}</span>` : ""}
                 </span>
                 ${item.company ? `<span class="pmore-company">${item.company}</span>` : ""}
